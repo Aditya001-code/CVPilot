@@ -333,7 +333,7 @@ function Home() {
           <div className="footer-social">
 
             <a
-              href="https://github.com/YOUR_GITHUB_USERNAME"
+              href="https://github.com/Aditya001-code"
               target="_blank"
               rel="noreferrer"
             >
@@ -341,14 +341,14 @@ function Home() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME"
+              href="https://www.linkedin.com/in/aditya-srivastava2005"
               target="_blank"
               rel="noreferrer"
             >
               <FaLinkedin />
             </a>
 
-            <a href="mailto:your@email.com">
+            <a href="mailto:adityasrivastava001@gmail.com">
               <FaEnvelope />
             </a>
 
