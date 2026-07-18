@@ -310,10 +310,6 @@ function Home() {
 
         </section>
 
-        {loading && <Loader />}
-
-        {result && !loading && <ResultCard result={result} />}
-
         <footer id="footer" className="footer">
 
           <h2>
