@@ -2,12 +2,9 @@ import "./Background.css";
 
 function Background() {
   return (
-    <div className="background">
-
-      <span className="blob blob1"></span>
-      <span className="blob blob2"></span>
-      <span className="blob blob3"></span>
-
+    <div className="editorial-background" aria-hidden="true">
+      {/* Subtle paper grain and margin ruling */}
+      <div className="editorial-paper-ruling"></div>
     </div>
   );
 }

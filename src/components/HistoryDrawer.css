@@ -1,0 +1,239 @@
+/* ==========================================================
+   CVPILOT SCAN HISTORY DRAWER — MODERN EARTHY (ESPRESSO + AMBER)
+   Background: #191613 | Header: #211C17 | Cards: #2A241E | Footer: #14110F
+   Main text: #F4EFE6 | Secondary: #B7AA97 | Primary: #D5A45B
+   Soft accent: #8F9B72 | Borders: #40382E
+   ========================================================== */
+
+.cv-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 12, 10, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  animation: fadeIn 0.2s ease;
+}
+
+.cv-drawer-panel {
+  width: 100%;
+  max-width: 460px;
+  height: 100%;
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border-default);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -12px 0 32px rgba(0, 0, 0, 0.65);
+  animation: slideLeft 0.25s ease;
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.cv-drawer-header {
+  padding: 26px 24px;
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cv-drawer-tag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  background: var(--soft-green-bg);
+  border: 1px solid var(--soft-green-border);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.cv-drawer-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: -0.015em;
+}
+
+.cv-drawer-close {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.15s ease;
+}
+
+.cv-drawer-close:hover {
+  color: var(--text-primary);
+  background: var(--bg-surface-hover);
+}
+
+.cv-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.cv-drawer-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  font-size: 13.5px;
+}
+
+.cv-drawer-empty {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.cv-empty-icon {
+  font-size: 40px;
+  color: var(--border-default);
+  margin-bottom: 14px;
+}
+
+.cv-drawer-empty h4 {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.cv-drawer-empty p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.cv-drawer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cv-history-item {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cv-history-item:hover {
+  border-color: var(--primary);
+  transform: translateY(-1px);
+  background: var(--bg-surface-hover);
+}
+
+.cv-history-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.cv-history-filename {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 240px;
+}
+
+.cv-history-score {
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.cv-history-score.emerald {
+  background: var(--soft-green-bg);
+  color: var(--primary);
+  border: 1px solid var(--soft-green-border);
+}
+
+.cv-history-score.amber {
+  background: var(--warm-accent-subtle);
+  color: var(--warm-accent);
+  border: 1px solid var(--warm-accent-border);
+}
+
+.cv-history-score.rose {
+  background: var(--warm-accent-subtle);
+  color: var(--warm-accent);
+  border: 1px solid var(--warm-accent-border);
+}
+
+.cv-history-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.cv-history-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-default);
+}
+
+.cv-open-report-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 12.5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.cv-open-report-btn:hover {
+  text-decoration: underline;
+}
+
+.cv-delete-report-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.15s ease;
+}
+
+.cv-delete-report-btn:hover {
+  color: var(--warm-accent);
+}

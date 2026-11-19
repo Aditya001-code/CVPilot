@@ -1,34 +1,209 @@
-.loader-container{
-    margin:60px auto;
-    text-align:center;
-    color:white;
+/* ==========================================================
+   CVPILOT — MODERN EARTHY (ESPRESSO + AMBER) SCAN LOADER
+   Background: #191613 | Header: #211C17 | Cards: #2A241E | Footer: #14110F
+   Main text: #F4EFE6 | Secondary: #B7AA97 | Primary: #D5A45B
+   Soft accent: #8F9B72 | Borders: #40382E
+   ========================================================== */
+
+.cv-loader-overlay {
+  width: 100%;
+  max-width: 680px;
+  margin: 32px auto;
+  animation: fadeIn 0.3s ease;
 }
 
-.loader{
-    width:70px;
-    height:70px;
-    margin:auto;
-    border:8px solid rgba(255,255,255,.15);
-    border-top:8px solid #38bdf8;
-    border-radius:50%;
-    animation:spin 1s linear infinite;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.loader-container h2{
-    margin-top:25px;
-    color:#38bdf8;
+.cv-loader-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: 36px 38px;
+  box-shadow: var(--shadow-card);
 }
 
-.loader-container p{
-    margin-top:10px;
-    color:#cbd5e1;
+.cv-loader-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
 }
 
-@keyframes spin{
-    from{
-        transform:rotate(0deg);
-    }
-    to{
-        transform:rotate(360deg);
-    }
+.cv-loader-spinner-wrapper {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.cv-spinner-ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2.5px solid var(--soft-green-bg);
+  border-top-color: var(--primary);
+  animation: spin 0.9s cubic-bezier(0.55, 0.15, 0.45, 0.85) infinite;
+}
+
+.cv-spinner-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.cv-loader-title {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: -0.015em;
+  margin-bottom: 3px;
+}
+
+.cv-loader-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Cold-start notification banner (Warm Accent #D28B6D) */
+.cv-cold-start-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  border-radius: var(--radius-md);
+  background: var(--warm-accent-subtle);
+  border: 1px solid var(--warm-accent-border);
+  color: var(--warm-accent);
+  font-size: 12.5px;
+  line-height: 1.45;
+  margin-bottom: 22px;
+  animation: fadeIn 0.3s ease;
+}
+
+.cv-cold-start-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* Progress track */
+.cv-loader-progress-track {
+  width: 100%;
+  height: 6px;
+  background: var(--soft-green-bg);
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.cv-loader-progress-bar {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 9999px;
+  transition: width 0.4s ease;
+}
+
+/* Diagnostic steps */
+.cv-loader-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cv-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.cv-step-item.completed {
+  opacity: 0.8;
+}
+
+.cv-step-item.current {
+  background: var(--soft-green-bg);
+  border: 1px solid var(--soft-green-border);
+}
+
+.cv-step-item.pending {
+  opacity: 0.35;
+}
+
+.cv-step-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.cv-check-icon {
+  color: var(--primary);
+  font-size: 16px;
+}
+
+.cv-step-pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  box-shadow: 0 0 6px rgba(134, 169, 139, 0.4);
+  animation: pulse-dot 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+}
+
+.cv-step-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--border-default);
+}
+
+.cv-step-content {
+  flex: 1;
+}
+
+.cv-step-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.cv-step-detail {
+  font-size: 12px;
+  color: var(--primary);
+  font-family: var(--font-mono);
+  margin-top: 3px;
+  animation: fadeIn 0.2s ease;
+}
+
+.cv-loader-footer {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-default);
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-secondary);
 }

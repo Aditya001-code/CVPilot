@@ -1,0 +1,282 @@
+/* ==========================================================
+   CVPILOT AUTH MODAL — MODERN EARTHY (ESPRESSO + AMBER)
+   Background: #191613 | Header: #211C17 | Cards: #2A241E | Footer: #14110F
+   Main text: #F4EFE6 | Secondary: #B7AA97 | Primary: #D5A45B
+   Soft accent: #8F9B72 | Borders: #40382E
+   ========================================================== */
+
+.cv-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 12, 10, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+.cv-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: 36px 34px;
+  box-shadow: 0 20px 48px -4px rgba(0, 0, 0, 0.7);
+  animation: slideUp 0.25s ease;
+}
+
+.cv-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.15s ease;
+}
+
+.cv-modal-close:hover {
+  background: var(--bg-surface-hover);
+  color: var(--text-primary);
+}
+
+.cv-modal-header {
+  text-align: left;
+  margin-bottom: 22px;
+}
+
+.cv-modal-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  background: var(--soft-green-bg);
+  border: 1px solid var(--soft-green-border);
+  padding: 2px 9px;
+  border-radius: 9999px;
+  margin-bottom: 8px;
+}
+
+.cv-modal-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: -0.015em;
+  margin-bottom: 6px;
+}
+
+.cv-modal-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.cv-modal-tabs {
+  display: flex;
+  gap: 6px;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-default);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  margin-bottom: 22px;
+}
+
+.cv-tab-item {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cv-tab-item.active {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.cv-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cv-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cv-password-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cv-form-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.cv-password-hint {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+}
+
+.cv-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cv-input-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-secondary);
+  font-size: 15px;
+  pointer-events: none;
+}
+
+.cv-form-input {
+  width: 100%;
+  padding: 11px 14px 11px 40px;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 13.5px;
+  font-family: var(--font-sans);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.cv-form-input.cv-password-input {
+  padding-right: 42px;
+}
+
+.cv-form-input:focus {
+  border-color: var(--primary);
+  outline: none;
+  background: var(--bg-surface);
+}
+
+.cv-password-toggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: color 0.15s ease;
+}
+
+.cv-password-toggle:hover {
+  color: var(--text-primary);
+}
+
+.cv-modal-submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+  margin-top: 6px;
+  box-shadow: var(--shadow-sm);
+}
+
+.cv-modal-submit-btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.cv-modal-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.cv-btn-loading-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cv-btn-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(25, 22, 19, 0.25);
+  border-top-color: var(--primary-contrast);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.cv-modal-switch-prompt {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+.cv-switch-link {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font-size: 12.5px;
+}
+
+.cv-switch-link:hover {
+  color: var(--primary-hover);
+}
+
+.cv-modal-footer {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-default);
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}

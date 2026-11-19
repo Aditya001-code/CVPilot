@@ -1,56 +1,19 @@
-.background{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    z-index:-1;
+.editorial-background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-color: var(--bg-canvas);
+  overflow: hidden;
 }
 
-.blob{
-    position:absolute;
-    border-radius:50%;
-    filter:blur(90px);
-    opacity:.35;
-    animation:float 12s ease-in-out infinite;
-}
-
-.blob1{
-    width:300px;
-    height:300px;
-    background:#2563eb;
-    top:10%;
-    left:-80px;
-}
-
-.blob2{
-    width:250px;
-    height:250px;
-    background:#06b6d4;
-    right:-60px;
-    top:35%;
-    animation-delay:2s;
-}
-
-.blob3{
-    width:350px;
-    height:350px;
-    background:#7c3aed;
-    bottom:-120px;
-    left:35%;
-    animation-delay:4s;
-}
-
-@keyframes float{
-
-    0%{
-        transform:translateY(0) scale(1);
-    }
-
-    50%{
-        transform:translateY(-40px) scale(1.08);
-    }
-
-    100%{
-        transform:translateY(0) scale(1);
-    }
-
+/* Subtle, elegant editorial paper ruling on espresso dark canvas */
+.editorial-paper-ruling {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to bottom, rgba(244, 239, 230, 0.025) 1px, transparent 1px);
+  background-size: 100% 32px;
+  mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.35) 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.35) 60%, transparent 100%);
 }

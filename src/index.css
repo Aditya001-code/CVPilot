@@ -1,26 +1,147 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+:root {
+  /* ==========================================================
+     CVPILOT — MODERN EARTHY (ESPRESSO + AMBER)
+     - Background: #191613
+     - Header: #211C17
+     - Cards: #2A241E
+     - Footer: #14110F
+     - Main text: #F4EFE6
+     - Secondary text: #B7AA97
+     - Primary accent: #D5A45B
+     - Soft accent: #8F9B72
+     - Borders: #40382E
+     ========================================================== */
+  
+  --bg-canvas: #191613;           /* Main background */
+  --bg-header: #211C17;           /* Header background */
+  --bg-surface: #2A241E;          /* Card / panel */
+  --bg-surface-elevated: #332C25; /* Elevated panel */
+  --bg-surface-hover: #3C342C;    /* Subtle hover on panels */
+  --bg-footer: #14110F;           /* Deep espresso footer */
+  
+  --text-primary: #F4EFE6;        /* Main text */
+  --text-secondary: #B7AA97;      /* Secondary text */
+  --text-tertiary: #877A69;       /* Muted / caption */
+  --text-muted: #645849;
+  
+  --primary: #D5A45B;             /* Primary accent — warm amber / gold */
+  --primary-hover: #E2B36D;
+  --primary-subtle: rgba(213, 164, 91, 0.15);
+  --primary-border: rgba(213, 164, 91, 0.35);
+  --primary-contrast: #191613;    /* Espresso ink on amber buttons for sharp contrast */
+  
+  --soft-accent: #8F9B72;         /* Soft accent — organic sage / olive */
+  --soft-green-bg: #283023;       /* Soft green / sage background — skill tags, pills */
+  --soft-green-text: #C3CEAE;
+  --soft-green-border: rgba(143, 155, 114, 0.35);
+  --muted-sage: #283023;
+  --muted-sage-subtle: rgba(143, 155, 114, 0.18);
+  
+  --warm-accent: #D77E5E;         /* Warm terracotta / improvement highlights */
+  --warm-accent-hover: #E58D6D;
+  --warm-accent-subtle: rgba(215, 126, 94, 0.15);
+  --warm-accent-border: rgba(215, 126, 94, 0.35);
+  --terracotta: #D77E5E;
+  --terracotta-subtle: rgba(215, 126, 94, 0.15);
+  --terracotta-border: rgba(215, 126, 94, 0.35);
+  
+  --emerald: #8F9B72;             /* High match fit (using soft olive/sage accent) */
+  --emerald-subtle: rgba(143, 155, 114, 0.18);
+  --emerald-border: rgba(143, 155, 114, 0.35);
+  
+  --amber: #D5A45B;               /* Primary amber */
+  --amber-subtle: rgba(213, 164, 91, 0.15);
+  --amber-border: rgba(213, 164, 91, 0.35);
+  
+  --rose: #D77E5E;                /* Actionable alert / needs revision */
+  --rose-subtle: rgba(215, 126, 94, 0.15);
+  --rose-border: rgba(215, 126, 94, 0.35);
+  
+  /* Borders */
+  --border-default: #40382E;      /* Specified border */
+  --border-subtle: rgba(244, 239, 230, 0.08);
+  --border-strong: rgba(213, 164, 91, 0.35);
+  
+  /* Typography */
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-serif-sub: 'Source Serif 4', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Shadows - Warm, earthy, deep espresso */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.45);
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border-default);
+  --shadow-lg: 0 16px 36px -4px rgba(0, 0, 0, 0.75);
+  
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 18px;
 }
 
-html,
-body,
-#root{
-  width:100%;
-  min-height:100%;
-  margin:0;
-  padding:0;
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-  font-family:'Segoe UI',sans-serif;
-  background:#020617;
-  overflow-x:hidden;
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#root{
-  width:100%;
-  max-width:none;
-  margin:0;
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Headings inherit serif editorial feel */
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--primary-contrast);
 }
