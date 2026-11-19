@@ -1,15 +1,17 @@
 import axios from "axios";
 
-// Intelligently resolve backend host to avoid localhost vs 127.0.0.1 mismatch in browsers
-let defaultApi = "http://localhost:5000";
-if (typeof window !== "undefined" && window.location.hostname === "127.0.0.1") {
-  defaultApi = "http://127.0.0.1:5000";
-}
+// Use the local backend during local development and CVPilot backend in production.
+const isLocalHost =
+  typeof window !== "undefined" &&
+  ["localhost", "127.0.0.1"].includes(window.location.hostname);
+const defaultApi = isLocalHost
+  ? "http://localhost:5000"
+  : "https://cvpilot-6thv.onrender.com";
 
 const API_URL = import.meta.env.VITE_API_URL || defaultApi;
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "https://resumeiq-ai-backend-xk29.onrender.com",
+  baseURL: API_URL,
   timeout: 50000,
 });
 
